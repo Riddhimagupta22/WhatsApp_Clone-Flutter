@@ -28,7 +28,7 @@ class Login extends StatelessWidget {
             child: RichText(
                 textAlign: TextAlign.center,
                 text: TextSpan(
-                    text: 'WhatsApp will need to verify your phone number.',
+                    text: 'WhatsApp will need to verify your phone number.Carrier charges may apply.  ',
                     style: TextStyle(color: Colors.grey, height: 1.5),
                     children: [
                       TextSpan(

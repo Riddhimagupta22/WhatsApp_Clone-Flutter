@@ -55,8 +55,8 @@ class _SettingPageState extends State<SettingPage> {
                         borderRadius: BorderRadius.circular(40),
                         child: Image.asset(
                           "images/WhatsApp Image 2024-11-07 at 16.22.25 (1).jpeg",
-                          height: 65,
-                          width: 65,
+                          height: 63,
+                          width: 63,
                         ),
                       ),
                       Padding(

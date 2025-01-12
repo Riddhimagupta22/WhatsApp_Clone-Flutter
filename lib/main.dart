@@ -19,16 +19,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      theme: ThemeData(
-        popupMenuTheme: (const PopupMenuThemeData(
-          iconColor: Colors.white,
-          color: Color(0xff0a131a),
-        )),
-        appBarTheme: AppBarTheme(
-          backgroundColor: Color(0xFF111B21),
-        ),
-        scaffoldBackgroundColor: Color(0xFF111B21),
-      ),
       title: "Whatsapp Clone",
       debugShowCheckedModeBanner: false,
       home: Welcome(),

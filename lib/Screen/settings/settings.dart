@@ -55,8 +55,6 @@ class _SettingPageState extends State<SettingPage> {
                         borderRadius: BorderRadius.circular(40),
                         child: Image.asset(
                           "images/WhatsApp Image 2024-11-07 at 16.22.25 (1).jpeg",
-                          height: 63,
-                          width: 63,
                         ),
                       ),
                       Padding(
@@ -160,7 +158,7 @@ class _SettingPageState extends State<SettingPage> {
                     ),
                   ),
                 ),
-                ListTile(
+                const ListTile(
                   leading: Padding(
                     padding: EdgeInsets.only(top: 6),
                     child: Icon(

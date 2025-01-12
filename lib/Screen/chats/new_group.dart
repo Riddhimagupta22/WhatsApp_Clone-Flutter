@@ -1,8 +1,4 @@
-
-import 'package:app_clone/feature/widgets/contacts.dart';
 import 'package:flutter/material.dart';
-
-import '../../feature/widgets/contacts.dart';
 
 class NewGroupPage extends StatelessWidget {
   List<String> images = [

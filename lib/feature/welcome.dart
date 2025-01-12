@@ -1,5 +1,3 @@
-
-import 'package:app_clone/feature/Auth/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,8 +7,6 @@ class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-          child: Column(
             children: [
               Expanded(
                   child: Padding(
@@ -29,7 +25,6 @@ class Welcome extends StatelessWidget {
                 children: [
                   Text(
                     "Welcome to WhatsApp",
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold,color: Colors.white),
                   ),
                   Padding(
                     padding:
@@ -81,7 +76,6 @@ class Welcome extends StatelessWidget {
                 ],
               )),
             ],
-          ),
         ));
   }
 }

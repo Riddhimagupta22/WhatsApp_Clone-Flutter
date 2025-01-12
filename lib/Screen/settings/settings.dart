@@ -20,7 +20,7 @@ class _SettingPageState extends State<SettingPage> {
             },
             icon: Icon(
               Icons.arrow_back,
-              color: Colors.white,
+              color: Colors.red,
             ),
           ),
           title: Padding(

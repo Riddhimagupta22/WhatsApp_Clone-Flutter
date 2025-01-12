@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'Auth/login.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
@@ -7,6 +8,7 @@ class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        body:Column(
             children: [
               Expanded(
                   child: Padding(

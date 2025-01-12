@@ -20,7 +20,7 @@ class _SettingPageState extends State<SettingPage> {
             },
             icon: Icon(
               Icons.arrow_back,
-              color: Colors.red,
+              color: Colors.white,
             ),
           ),
           title: Padding(
@@ -162,8 +162,8 @@ class _SettingPageState extends State<SettingPage> {
                   leading: Padding(
                     padding: EdgeInsets.only(top: 6),
                     child: Icon(
-                      FontAwesomeIcons.contactBook,
                       color: Colors.white54,
+                      FontAwesomeIcons.contactBook,
                     ),
                   ),
                   title: Text(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../feature/widgets/contacts.dart';
+
 class NewGroupPage extends StatelessWidget {
   List<String> images = [
     'images/WhatsApp Image 2024-11-07 at 22.13.49.jpeg',

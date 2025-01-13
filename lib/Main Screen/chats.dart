@@ -15,12 +15,12 @@ class HomePage extends StatelessWidget {
 
   // Corrected list of names
   List<String> names = [
-    "Avyan",
-    "Andrew",
-    "Eric",
-    "Olivia",
-    "Emma",
-    "Amelia",
+    "Avi",
+    "Ansh",
+    "Vibhav",
+    "Divya",
+    "Esha",
+    "Anvi",
     "Sofia",
   ];
 

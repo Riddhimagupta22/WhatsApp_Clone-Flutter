@@ -87,6 +87,8 @@ class _UpdatepageState extends State<Updatepage> {
                 color: Colors.white,
               )),
           PopupMenuButton(
+            iconSize: 25,
+            iconColor: Colors.white,
             onSelected: (value) {
               if (value == 'status_privacy') {
                 Navigator.of(context).push(MaterialPageRoute(

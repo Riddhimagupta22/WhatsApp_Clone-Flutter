@@ -17,7 +17,6 @@ class _PopmenubuttonpageState extends State<Popmenubuttonpage> {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(
-        color: const Color(0xff0a131a),
         onSelected: (value) {
           if (value == 'new_group') {
             Navigator.of(context)

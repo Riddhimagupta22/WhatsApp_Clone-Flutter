@@ -55,7 +55,6 @@ class Communities extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: Color(0xff0a131a),
       appBar: AppBar(
         title: Text(
           "Communities",
@@ -84,7 +83,7 @@ class Communities extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => SettingPage()));
               }
             },
-            iconColor: Colors.white,
+
             itemBuilder: (BuildContext context) {
               return [
                 PopupMenuItem(

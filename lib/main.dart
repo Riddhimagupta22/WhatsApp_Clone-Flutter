@@ -19,10 +19,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        popupMenuTheme: PopupMenuThemeData(
+          iconSize: 25,
+          iconColor: Colors.white,
+         color:  Color(0xff0a131a),
+        ),
+        appBarTheme: AppBarTheme(backgroundColor: Color(0xff0a131a),),
+        scaffoldBackgroundColor: Color(0xff0a131a),
       ),
       title: "Whatsapp Clone",
       debugShowCheckedModeBanner: false,
-      home: Welcome(),
+      home: SplashScreen(),
     );
   }
 }

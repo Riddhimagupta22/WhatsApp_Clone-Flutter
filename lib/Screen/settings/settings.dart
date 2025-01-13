@@ -51,11 +51,10 @@ class _SettingPageState extends State<SettingPage> {
                   margin: EdgeInsets.symmetric(vertical: 12),
                   child: Row(
                     children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(40),
-                        child: Image.asset(
-                          "images/WhatsApp Image 2024-11-07 at 16.22.25 (1).jpeg",
-                        ),
+                      CircleAvatar(
+                        radius: 35,
+                        backgroundImage:
+                        AssetImage("images/WhatsApp Image 2024-11-07 at 21.58.11.jpeg"),
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 20),
@@ -69,11 +68,9 @@ class _SettingPageState extends State<SettingPage> {
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             ),
-                            SizedBox(
-                              height: size.height * .01,
-                            ),
+
                             Text(
-                              "Hey there, I am using whatsapp.",
+                              "Busy.",
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w400,
@@ -116,7 +113,7 @@ class _SettingPageState extends State<SettingPage> {
                   subtitle: Text(
                     "Security nofications,change number",
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 15,color: Colors.white54,
                     ),
                   ),
                 ),
@@ -135,7 +132,7 @@ class _SettingPageState extends State<SettingPage> {
                   subtitle: Text(
                     "Block contacts, disappearing messages",
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 15,color: Colors.white54,
                     ),
                   ),
                 ),
@@ -154,7 +151,7 @@ class _SettingPageState extends State<SettingPage> {
                   subtitle: Text(
                     "Create, edit,profile photo",
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 15,color: Colors.white54,
                     ),
                   ),
                 ),
@@ -174,6 +171,7 @@ class _SettingPageState extends State<SettingPage> {
                     "Manage people and groups",
                     style: TextStyle(
                       fontSize: 15,
+                      color: Colors.white54,
                     ),
                   ),
                 ),
@@ -193,6 +191,7 @@ class _SettingPageState extends State<SettingPage> {
                     "Theme,wallpapers,chat history",
                     style: TextStyle(
                       fontSize: 15,
+                      color: Colors.white54,
                     ),
                   ),
                 ),
@@ -212,6 +211,7 @@ class _SettingPageState extends State<SettingPage> {
                     "Message,group,call tones",
                     style: TextStyle(
                       fontSize: 15,
+                      color: Colors.white54,
                     ),
                   ),
                 ),
@@ -231,6 +231,7 @@ class _SettingPageState extends State<SettingPage> {
                     "Network usage, auto-download",
                     style: TextStyle(
                       fontSize: 15,
+                      color: Colors.white54,
                     ),
                   ),
                 ),
@@ -269,6 +270,7 @@ class _SettingPageState extends State<SettingPage> {
                     "Help centre, contact us,privacy policy",
                     style: TextStyle(
                       fontSize: 15,
+                      color: Colors.white54,
                     ),
                   ),
                 ),

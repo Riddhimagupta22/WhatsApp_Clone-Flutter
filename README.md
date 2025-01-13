@@ -11,10 +11,10 @@ A Flutter-based frontend for a WhatsApp-like messaging application. This project
 **Status Stories**: Interactive stories display.
 **Call Logs**: A neatly designed calls section, making it easy to navigate call history.
 
-##💫Features
+## 💫Features
+
 **Chat List Page**: Displays a list of chats.  
 **Chat Screen**: Displays the conversation with a contact.
-
 **Update Page**: Displays stories.
 **Calls Page**: Displays voice/video call logs
 **Settings Page**: Profile management and preferences.

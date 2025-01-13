@@ -5,19 +5,18 @@ A Flutter-based frontend for a WhatsApp-like messaging application. This project
 
 ## ✨Highlights
 
-**Clean Design**: A pixel-perfect replica of WhatsApp's UI with a focus on responsiveness.
-**Chat Interface**: Messaging layout, complete with sent/received message bubbles.    
-
-**Status Stories**: Interactive stories display.
-**Call Logs**: A neatly designed calls section, making it easy to navigate call history.
+**Clean Design**: A pixel-perfect replica of WhatsApp's UI with a focus on responsiveness. <br>
+**Chat Interface**: Messaging layout, complete with sent/received message bubbles. <br>
+**Status Stories**: Interactive stories display. <br>
+**Call Logs**: A neatly designed calls section, making it easy to navigate call history. <br>
 
 ## 💫Features
 
-**Chat List Page**: Displays a list of chats.  
-**Chat Screen**: Displays the conversation with a contact.
-**Update Page**: Displays stories.
-**Calls Page**: Displays voice/video call logs
-**Settings Page**: Profile management and preferences.
+**Chat List Page**: Displays a list of chats. <br>
+**Chat Screen**: Displays the conversation with a contact. <br>
+**Update Page**: Displays stories. <br>
+**Calls Page**: Displays voice/video call logs. <br>
+**Settings Page**: Profile management and preferences. <br>
 
 ## 📷AppUi
 

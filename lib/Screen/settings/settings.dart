@@ -152,7 +152,13 @@ class _SettingPageState extends State<SettingPage> {
                   title: Text(
                     "Avatar",
                     style: TextStyle(fontSize: 17, color: Colors.white),
+                  ), subtitle: Text(
+                  "Create, edit,profile photo",
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.white54,
                   ),
+                ),
                 ),
                 const ListTile(
                   leading: Padding(

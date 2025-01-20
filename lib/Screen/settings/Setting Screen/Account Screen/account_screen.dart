@@ -76,13 +76,6 @@ class AccountScreen extends StatelessWidget {
               "Email address",
               style: TextStyle(fontSize: 17, color: Colors.white),
             ),
-            subtitle: Text(
-              "Create, edit,profile photo",
-              style: TextStyle(
-                fontSize: 15,
-                color: Colors.white54,
-              ),
-            ),
           ),
           const ListTile(
             leading: Padding(

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+
+import 'Setting Screen/Account Screen/account_screen.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({super.key});
@@ -99,6 +102,8 @@ class _SettingPageState extends State<SettingPage> {
                   color: Color(0xFF636F75),
                 ),
                 ListTile(
+                  onTap: () {Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) => AccountScreen()));},
                   leading: Padding(
                     padding: EdgeInsets.only(top: 6),
                     child: Icon(
@@ -147,12 +152,6 @@ class _SettingPageState extends State<SettingPage> {
                   title: Text(
                     "Avatar",
                     style: TextStyle(fontSize: 17, color: Colors.white),
-                  ),
-                  subtitle: Text(
-                    "Create, edit,profile photo",
-                    style: TextStyle(
-                      fontSize: 15,color: Colors.white54,
-                    ),
                   ),
                 ),
                 const ListTile(

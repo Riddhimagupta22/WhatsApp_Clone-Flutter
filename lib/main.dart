@@ -3,6 +3,7 @@ import 'package:app_clone/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
+import 'Screen/settings/Setting Screen/Account Screen/change_no.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -23,10 +24,12 @@ class MyApp extends StatelessWidget {
         popupMenuTheme: PopupMenuThemeData(
           iconSize: 25,
           iconColor: Colors.white,
-         color:  Color(0xff0a131a),
+         color:  Color.fromARGB(255,11,17,21),
         ),
-        appBarTheme: AppBarTheme(backgroundColor: Color(0xff0a131a),),
-        scaffoldBackgroundColor: Color(0xff0a131a),
+        appBarTheme: AppBarTheme(
+          surfaceTintColor: Colors.transparent,
+          backgroundColor: Color.fromARGB(255,11,17,21),),
+        scaffoldBackgroundColor:Color.fromARGB(255,11,17,21),
       ),
       title: "Whatsapp Clone",
       debugShowCheckedModeBanner: false,

@@ -67,13 +67,6 @@ class _UpdatepageState extends State<Updatepage> {
         actions: [
           IconButton(
               onPressed: () {},
-              icon: const Icon(
-                Icons.qr_code_scanner,
-                size: 25,
-                color: Colors.white,
-              )),
-          IconButton(
-              onPressed: () {},
               icon: Icon(
                 Icons.camera_alt_outlined,
                 size: 25,
@@ -126,240 +119,255 @@ class _UpdatepageState extends State<Updatepage> {
           )
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.green,
-        onPressed: () {
-          // Action for the camera button can be added here
-        },
-        child: Icon(Icons.camera_alt_rounded),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Container(
+            height: size.width*0.115,
+            width: size.width*0.11,
+            margin: EdgeInsets.only(bottom: 10),
+            child: FloatingActionButton(onPressed: (){},
+                backgroundColor: Color.fromARGB(255,24,46,49),
+              child: Icon(Icons.edit,color: Colors.white,),),
+          ),
+          FloatingActionButton(
+            backgroundColor: Colors.green,
+            onPressed: () {
+              // Action for the camera button can be added here
+            },
+            child: Icon(Icons.camera_alt_rounded),
+          ),
+        ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              margin: EdgeInsets.only(left: 15),
-              alignment: Alignment.centerLeft,
-              child: Container(
-                margin: EdgeInsets.only(top: 20),
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 12),
-                  child: Text(
-                    'Status',
-                    style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 100,
-              child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: statusImages.length,
-                  itemBuilder: (context, index) => Column(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: Colors.green, width: 2),
-                                shape: BoxShape.circle),
-                            margin: EdgeInsets.symmetric(horizontal: 7),
-                            child: CircleAvatar(
-                              radius: 30,
-                              backgroundImage: statusImages[index].image,
-                            ),
-                          ),
-                          SizedBox(height: 12),
-                          Text(
-                            StatusTittles[index],
-                            style: TextStyle(fontSize: 15, color: Colors.white),
-                          ),
-                        ],
-                      )),
-            ),
-            Divider(
-              color: Colors.white12,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Row(
-                children: [
-                  Text(
-                    'Channels',
-                    style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w400),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 170.0),
-                    child: Text(
-                      'Explore',
-                      style: TextStyle(fontSize: 15, color: Colors.green),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    child: Icon(
-                      Icons.arrow_forward_ios,
-                      color: Colors.green,
-                      size: 15,
-                    ),
-                  )
-                ],
-              ),
-            ),
-            SizedBox(height: 10),
-            SizedBox(
-              child: ListView.builder(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: whatsappChannelNames.length,
-                  itemBuilder: (context, index) => ListTile(
-                        title: Text(
-                          whatsappChannelNames[index],
-                          style: TextStyle(
-                            fontWeight: FontWeight.w300,
-                            fontSize: 16,
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(left: 15,top: 20),
+                  // alignment: Alignment.centerLeft,
+                  child: Container(
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 12),
+                      child: Text(
+                        'Status',
+                        style: TextStyle(
+                            fontSize: 20,
                             color: Colors.white,
-                          ),
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 101,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: statusImages.length,
+                      itemBuilder: (context, index) => Column(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                    border:
+                                        Border.all(color: Colors.green, width: 2),
+                                    shape: BoxShape.circle),
+                                margin: EdgeInsets.symmetric(horizontal: 7),
+                                child: CircleAvatar(
+                                  radius: 30,
+                                  backgroundImage: statusImages[index].image,
+                                ),
+                              ),
+                              SizedBox(height: 12),
+                              Text(
+                                StatusTittles[index],
+                                style: TextStyle(fontSize: 15, color: Colors.white),
+                              ),
+                            ],
+                          )),
+                ),
+                Divider(
+                  color: Colors.white12,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Channels',
+                        style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 170.0),
+                        child: Text(
+                          'Explore',
+                          style: TextStyle(fontSize: 15, color: Colors.green),
                         ),
-                        subtitle: Row(
-                          children: [
-                            Icon(
-                              Icons.photo,
-                              color: Colors.grey,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.green,
+                          size: 15,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(height: 10),
+                ListView.builder(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemCount: whatsappChannelNames.length,
+                    itemBuilder: (context, index) => ListTile(
+                          title: Text(
+                            whatsappChannelNames[index],
+                            style: TextStyle(
+                              fontWeight: FontWeight.w300,
+                              fontSize: 16,
+                              color: Colors.white,
                             ),
-                            Text(
-                              whatsappChannelSubtitles[index],
-                              style: TextStyle(color: Colors.grey),
-                            )
-                          ],
-                        ),
-                        leading: CircleAvatar(
-                          backgroundImage: images[index].image,
-                          backgroundColor: Colors.white,
-                        ),
-                        trailing: Text(
-                          times[index],
-                          style: TextStyle(color: Colors.grey, fontSize: 13),
-                        ),
-                      )),
-            ),
-            SizedBox(height: 13),
-            Padding(
-              padding: const EdgeInsets.only(right: 200),
-              child: Text(
-                "Find channels to follow",
-                style: TextStyle(
-                    color: Colors.white54, fontWeight: FontWeight.w600),
-              ),
-            ),
-            SizedBox(height: 10),
-            ListTile(
-                leading: CircleAvatar(
-                  radius: 20,
-                  backgroundColor: Colors.black,
-                  backgroundImage: AssetImage(
-                    "images/google.jpg",
-                  ),
-                ),
-                title: Text(
-                  "Google",
-                  style: TextStyle(color: Colors.white, fontSize: 17),
-                ),
-                subtitle: Text(
-                  "6.2M followers",
-                  style: TextStyle(color: Colors.white54),
-                ),
-                trailing: ElevatedButton(
-                  onPressed: () {},
+                          ),
+                          subtitle: Row(
+                            children: [
+                              Icon(
+                                Icons.photo,
+                                color: Colors.grey,
+                              ),
+                              Text(
+                                whatsappChannelSubtitles[index],
+                                style: TextStyle(color: Colors.grey),
+                              )
+                            ],
+                          ),
+                          leading: CircleAvatar(
+                            backgroundImage: images[index].image,
+                            backgroundColor: Colors.white,
+                          ),
+                          trailing: Text(
+                            times[index],
+                            style: TextStyle(color: Colors.grey, fontSize: 13),
+                          ),
+                        )),
+                SizedBox(height: 13),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Text(
-                    "Follow",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                  ),
-                )),
-            ListTile(
-                leading: CircleAvatar(
-                  radius: 20,
-                  backgroundColor: Colors.black,
-                  backgroundImage: AssetImage(
-                    "images/travel.jpg",
+                    "Find channels to follow",
+                    style: TextStyle(
+                        color: Colors.white54, fontWeight: FontWeight.w600),
                   ),
                 ),
-                title: Text(
-                  "Travel Vlog",
-                  style: TextStyle(color: Colors.white, fontSize: 17),
+                SizedBox(height: 10),
+                ListTile(
+                    leading: CircleAvatar(
+                      radius: 20,
+                      backgroundColor: Colors.black,
+                      backgroundImage: AssetImage(
+                        "images/google.jpg",
+                      ),
+                    ),
+                    title: Text(
+                      "Google",
+                      style: TextStyle(color: Colors.white, fontSize: 17),
+                    ),
+                    subtitle: Text(
+                      "6.2M followers",
+                      style: TextStyle(color: Colors.white54),
+                    ),
+                    trailing: ElevatedButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Follow",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                      ),
+                    )),
+                ListTile(
+                    leading: CircleAvatar(
+                      radius: 20,
+                      backgroundColor: Colors.black,
+                      backgroundImage: AssetImage(
+                        "images/travel.jpg",
+                      ),
+                    ),
+                    title: Text(
+                      "Travel Vlog",
+                      style: TextStyle(color: Colors.white, fontSize: 17),
+                    ),
+                    subtitle: Text(
+                      "1.1M followers",
+                      style: TextStyle(color: Colors.white54),
+                    ),
+                    trailing: ElevatedButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Follow",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                      ),
+                    )),
+                ListTile(
+                    leading: CircleAvatar(
+                      radius: 20,
+                      backgroundColor: Colors.black,
+                      backgroundImage: AssetImage(
+                        "images/maths.jpg",
+                      ),
+                    ),
+                    title: Text(
+                      "Neha mam army",
+                      style: TextStyle(color: Colors.white, fontSize: 17),
+                    ),
+                    subtitle: Text(
+                      "3.2M followers",
+                      style: TextStyle(color: Colors.white54),
+                    ),
+                    trailing: ElevatedButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Follow",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                      ),
+                    )),
+                SizedBox(
+                  height: 15,
                 ),
-                subtitle: Text(
-                  "1.1M followers",
-                  style: TextStyle(color: Colors.white54),
-                ),
-                trailing: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Follow",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                  ),
-                )),
-            ListTile(
-                leading: CircleAvatar(
-                  radius: 20,
-                  backgroundColor: Colors.black,
-                  backgroundImage: AssetImage(
-                    "images/maths.jpg",
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Container(
+                    width: 140,
+                    height: 40,
+                    decoration: BoxDecoration(
+                        color: Color(0xff0a131a),
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: Colors.white54)),
+                    child: Center(
+                        child: Text(
+                      "Explore more",
+                      style: TextStyle(color: Colors.green),
+                    )),
                   ),
                 ),
-                title: Text(
-                  "Neha mam army",
-                  style: TextStyle(color: Colors.white, fontSize: 17),
-                ),
-                subtitle: Text(
-                  "3.2M followers",
-                  style: TextStyle(color: Colors.white54),
-                ),
-                trailing: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Follow",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                  ),
-                )),
-            SizedBox(
-              height: 15,
+              ],
             ),
-            Padding(
-              padding: const EdgeInsets.only(right: 200.0),
-              child: Container(
-                width: 140,
-                height: 40,
-                decoration: BoxDecoration(
-                    color: Color(0xff0a131a),
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: Colors.white54)),
-                child: Center(
-                    child: Text(
-                  "Explore more",
-                  style: TextStyle(color: Colors.green),
-                )),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -13,11 +13,11 @@ class Contacts extends StatelessWidget {
 
   // Corrected list of names
   List<String> names = [
-    "Avyan",
-    "Andrew",
-    "Eric",
-    "Olivia",
-    "Emma",
+    "Avi",
+    "Ansh",
+    "Divya",
+    "Mukul",
+    "Nisha",
     "Tina",
     "Vaibhav",
   ];

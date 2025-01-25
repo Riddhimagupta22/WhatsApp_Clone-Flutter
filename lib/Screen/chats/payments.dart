@@ -10,8 +10,8 @@ class PaymentPage extends StatefulWidget {
 class _PaymentPageState extends State<PaymentPage> {
   @override
   Widget build(BuildContext context) {
-    var scrH = MediaQuery.of(context).size.height;
-    var scrW = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     var icons = [
       CircleAvatar(
         child: Icon(
@@ -53,7 +53,7 @@ class _PaymentPageState extends State<PaymentPage> {
           child: Column(
             children: [
               Container(
-                height: scrH * 0.17,
+                height: height * 0.17,
                 decoration: BoxDecoration(
                     color: const Color(0xff13181C),
                     border: Border(
@@ -77,8 +77,8 @@ class _PaymentPageState extends State<PaymentPage> {
                 ),
               ),
               Container(
-                height: scrH * 0.2,
-                width: scrW * 1,
+                height: height * 0.2,
+                width: width * 1,
                 decoration: BoxDecoration(
                     color: Color(0xff13181C),
                     border: Border(
@@ -95,7 +95,7 @@ class _PaymentPageState extends State<PaymentPage> {
                       ),
                     ),
                     SizedBox(
-                      height: scrH * 0.01,
+                      height: height * 0.01,
                     ),
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
@@ -106,8 +106,8 @@ class _PaymentPageState extends State<PaymentPage> {
                             Column(
                               children: [
                                 Container(
-                                  height: scrH * 0.1,
-                                  width: scrW * 0.2,
+                                  height: height * 0.1,
+                                  width: width * 0.2,
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     //border: Border.all(color: Colors.green, width: 2),
@@ -129,13 +129,13 @@ class _PaymentPageState extends State<PaymentPage> {
                               ],
                             ),
                             SizedBox(
-                              width: scrW * 0.04,
+                              width: width * 0.04,
                             ),
                             Column(
                               children: [
                                 Container(
-                                  height: scrH * 0.1,
-                                  width: scrW * 0.2,
+                                  height: height * 0.1,
+                                  width: width * 0.2,
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     //border: Border.all(color: Colors.green, width: 2),
@@ -157,13 +157,13 @@ class _PaymentPageState extends State<PaymentPage> {
                               ],
                             ),
                             SizedBox(
-                              width: scrW * 0.04,
+                              width: width * 0.04,
                             ),
                             Column(
                               children: [
                                 Container(
-                                  height: scrH * 0.1,
-                                  width: scrW * 0.2,
+                                  height: height * 0.1,
+                                  width: width * 0.2,
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     //border: Border.all(color: Colors.green, width: 2),
@@ -185,13 +185,13 @@ class _PaymentPageState extends State<PaymentPage> {
                               ],
                             ),
                             SizedBox(
-                              width: scrW * 0.04,
+                              width: width * 0.04,
                             ),
                             Column(
                               children: [
                                 Container(
-                                  height: scrH * 0.1,
-                                  width: scrW * 0.2,
+                                  height: height * 0.1,
+                                  width: width * 0.2,
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     //border: Border.all(color: Colors.green, width: 2),
@@ -207,7 +207,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: scrH * 0.01,
+                                  height: height * 0.01,
                                 ),
                                 Text(
                                   "See all",
@@ -226,8 +226,8 @@ class _PaymentPageState extends State<PaymentPage> {
                 ),
               ),
               Container(
-                height: scrH * 0.19,
-                width: scrW * 1,
+                height: height * 0.19,
+                width: width * 1,
                 decoration: BoxDecoration(
                     color: Color(0xff13181C),
                     border: Border(
@@ -247,11 +247,10 @@ class _PaymentPageState extends State<PaymentPage> {
                       child: Column(
                         children: [
                           Container(
-                              height: scrH * 0.1,
-                              child: Image.network(
-                                  "https://cdn.icon-icons.com/icons2/2785/PNG/512/receipt_icon_177352.png")),
+                              height: height * 0.1,
+                              child: Icon(Icons.history_edu,color: Colors.grey,size: 50,)),
                           SizedBox(
-                            height: scrH * 0.01,
+                            height: height * 0.01,
                           ),
                           Text(
                             "No Payment History",
@@ -267,8 +266,8 @@ class _PaymentPageState extends State<PaymentPage> {
                 ),
               ),
               Container(
-                height: scrH * 0.24,
-                width: scrW * 1,
+                height: height * 0.24,
+                width: width * 1,
                 decoration: BoxDecoration(
                     color: Color(0xff13181C),
                     border: Border(
@@ -281,7 +280,7 @@ class _PaymentPageState extends State<PaymentPage> {
                       padding: EdgeInsets.only(left: 16, top: 8),
                       child: Text(
                         "Payment methods",
-                        style: TextStyle(color: Colors.green),
+                        style: TextStyle(color: Colors.grey),
                       ),
                     ),
                     Expanded(
@@ -289,61 +288,58 @@ class _PaymentPageState extends State<PaymentPage> {
                       children: [
                         Padding(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 9, vertical: 20),
-                          child: Container(
-                            height: scrH * 0.09,
-                            decoration: BoxDecoration(
-                                color: Color(0xff252f36),
-                                borderRadius: BorderRadius.circular(20)),
-                            child: ListTile(
-                              leading: Icon(
-                                Icons.lock,
-                                size: 26,
-                                color: Colors.green,
-                              ),
-                              title: RichText(
-                                // alag alag tet ho jinko styling deni ho , so udhr ye lgta hai
-                                text: TextSpan(
-                                  children: [
-                                    TextSpan(
-                                      text:
-                                          "To protect your sequrity. Whatsapp does not store your UPI PIN or full bank account number .",
-                                      style: TextStyle(
-                                        color: Colors.white70,
-                                        fontWeight: FontWeight.w300,
-                                        fontSize: 14,
-                                      ),
+                              horizontal: 9, vertical: 10),
+                          child: ListTile(
+                            leading: Icon(
+                              Icons.lock,
+                              size: 26,
+                              color: Colors.grey,
+                            ),
+                            title: RichText(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text:
+                                        "Whatsapp doesn't store your full bank account number,debit card or UPI PIN info.",
+                                    style: TextStyle(
+                                      color: Colors.white70,
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 14,
                                     ),
-                                    TextSpan(
-                                      text: "  Learn more    ",
-                                      style: TextStyle(
-                                        color: Colors.green,
-                                        fontWeight: FontWeight.w200,
-                                        fontSize: 13,
-                                      ),
+                                  ),
+                                  TextSpan(
+                                    text: "Learn more",
+                                    style: TextStyle(
+                                      color: Colors.lightBlue,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14,
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
                         )
                       ],
                     )),
-                    ListTile(
-                      leading: Icon(Icons.add_circle_outline_rounded,
-                          color: Colors.white70),
-                      title: Text(
-                        "Add payment method",
-                        style: TextStyle(color: Colors.white70),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 9, vertical: 10),
+                      child: ListTile(
+                        leading: Icon(Icons.add_circle_outline_rounded,
+                            color: Colors.white70),
+                        title: Text(
+                          "Add payment method",
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                     )
                   ],
                 ),
               ),
               Container(
-                height: scrH * 0.08,
-                width: scrW * 1,
+                height: height * 0.08,
+                width: width * 1,
                 decoration: BoxDecoration(
                   color: Color(0xff13181C),
                   border: Border(
@@ -362,8 +358,8 @@ class _PaymentPageState extends State<PaymentPage> {
                 ),
               ),
               Container(
-                height: scrH * 0.08,
-                width: scrW * 1,
+                height: height * 0.08,
+                width: width * 1,
                 decoration: BoxDecoration(
                   color: Color(0xff13181C),
                   border: Border(
@@ -380,7 +376,7 @@ class _PaymentPageState extends State<PaymentPage> {
                 ),
               ),
               Container(
-                  height: scrH * 0.08,
+                  height: height * 0.08,
                   child: Image.network(
                       "https://cdn.iconscout.com/icon/free/png-256/free-upi-logo-icon-download-in-svg-png-gif-file-formats--unified-payments-interface-payment-money-transfer-logos-icons-1747946.png?f=webp"))
             ],

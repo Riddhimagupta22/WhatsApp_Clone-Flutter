@@ -71,13 +71,6 @@ class Calls extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {},
-              icon: const Icon(
-                Icons.qr_code_scanner,
-                size: 25,
-                color: Colors.white,
-              )),
-          IconButton(
-              onPressed: () {},
               icon: Icon(
                 Icons.camera_alt_outlined,
                 size: 25,

@@ -1,3 +1,4 @@
+import 'package:app_clone/Screen/settings/Setting%20Screen/Account%20Screen/change_no.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -12,6 +13,10 @@ class AccountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        shape: Border(
+            bottom: BorderSide(
+              color: Color.fromARGB(255, 31, 43, 50),
+            )),
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -31,10 +36,7 @@ class AccountScreen extends StatelessWidget {
       body: Column(
         children: [
           ListTile(
-            onTap: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => AccountScreen()));
-            },
+            onTap: ()  => Get.to(AccountScreen()),
             leading: Padding(
               padding: EdgeInsets.only(top: 6),
               child: Icon(
@@ -47,7 +49,10 @@ class AccountScreen extends StatelessWidget {
               style: TextStyle(fontSize: 17, color: Colors.white),
             ),
           ),
-          ListTile(
+          ListTile(onTap: () {
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => AccountScreen()));
+          },
             leading: Padding(
               padding: EdgeInsets.only(top: 6),
               child: Icon(
@@ -91,6 +96,7 @@ class AccountScreen extends StatelessWidget {
             ),
           ),
           ListTile(
+            onTap: ()  => Get.to(ChangeNoPage()),
             leading: Padding(
               padding: EdgeInsets.only(top: 6),
               child: Icon(

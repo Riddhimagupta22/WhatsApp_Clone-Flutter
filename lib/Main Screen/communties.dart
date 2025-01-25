@@ -64,13 +64,6 @@ class Communities extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {},
-              icon: const Icon(
-                Icons.qr_code_scanner,
-                size: 25,
-                color: Colors.white,
-              )),
-          IconButton(
-              onPressed: () {},
               icon: Icon(
                 Icons.camera_alt_outlined,
                 color: Colors.white,
@@ -329,6 +322,26 @@ class Communities extends StatelessWidget {
                           style: TextStyle(color: Colors.grey),
                         ),
                       )),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 15, top: 0),
+              height: 50,
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.grey,
+                    size: 15,
+                  ),
+                  Container(
+                      margin: EdgeInsets.only(left: 30),
+                      child: Text(
+                        'View all',
+                        style: TextStyle(color: Colors.grey),
+                      )),
+                  Divider(thickness: 10, color: Colors.black),
+                ],
+              ),
             ),
           ],
         ),

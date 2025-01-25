@@ -13,6 +13,10 @@ class _StarredMessagePageState extends State<StarredMessagePage> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
+        shape: Border(
+            bottom: BorderSide(
+              color: Color.fromARGB(255, 31, 43, 50),
+            )),
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -25,14 +29,11 @@ class _StarredMessagePageState extends State<StarredMessagePage> {
         title: Text(
           'Starred messages',
           style: TextStyle(
-              color: Colors.white, fontSize: 17, fontWeight: FontWeight.w400),
+              color: Colors.white,),
         ),
       ),
       body: Column(
         children: [
-          Divider(
-            color: Colors.white12,
-          ),
           Padding(
             padding: const EdgeInsets.only(top: 220),
             child: Center(

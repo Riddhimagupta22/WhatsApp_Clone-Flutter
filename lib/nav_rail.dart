@@ -109,11 +109,11 @@ class _NavigationrailState extends State<Navigationrail> {
               });
               _pageViewController.jumpToPage(index);
             },
-            backgroundColor: const Color(0xff0a131a),
+            backgroundColor: Color.fromARGB(255,11,17,21),
             items: const [
               BottomNavigationBarItem(
                 icon: Icon(Icons.chat),
-                backgroundColor: Color(0xff0a131a),
+                backgroundColor: Color.fromARGB(255,11,17,21),
                 label: 'Chats',
               ),
               BottomNavigationBarItem(

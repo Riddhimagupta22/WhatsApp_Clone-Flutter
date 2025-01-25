@@ -1,8 +1,16 @@
+import 'package:app_clone/Screen/settings/Setting%20Screen/Avatar/avatar_screen.dart';
+import 'package:app_clone/Screen/settings/Setting%20Screen/Help%20Screen/help_screen.dart';
+import 'package:app_clone/Screen/settings/Setting%20Screen/Invite/invite.dart';
+import 'package:app_clone/Screen/settings/Setting%20Screen/Privacy%20Screen/privacy_screen.dart';
+import 'package:app_clone/Screen/settings/Setting%20Screen/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-
 import 'Setting Screen/Account Screen/account_screen.dart';
+import 'Setting Screen/Chat/chat.dart';
+import 'Setting Screen/List/list.dart';
+import 'Setting Screen/Notification/notification_screen.dart';
+import 'Setting Screen/Storage and Data/storage_data.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({super.key});
@@ -15,333 +23,262 @@ class _SettingPageState extends State<SettingPage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+
     return Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(
-              Icons.arrow_back,
+      appBar: AppBar(
+        shape: const Border(
+          bottom: BorderSide(
+            color: Color.fromARGB(255, 31, 43, 50),
+          ),
+        ),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+        ),
+        title: const Padding(
+          padding: EdgeInsets.only(left: 10.0),
+          child: Text(
+            'Settings',
+            style: TextStyle(
               color: Colors.white,
             ),
           ),
-          title: Padding(
-            padding: const EdgeInsets.only(left: 10.0),
-            child: Text(
-              'Settings',
-              style: TextStyle(
-                color: Colors.white,
-              ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.search,
+              size: 25,
+              color: Colors.white,
             ),
           ),
-          actions: [
-            IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.search,
-                  size: 25,
-                  color: Colors.white,
-                ))
-          ],
-        ),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
-            child: Column(
-              children: [
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 12),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            // Profile section
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: size.width * 0.03,vertical: 5),
+              child: InkWell(
+                onTap: () => Get.to(ProfilePage()),
+                child: Container(
+                  height: size.width * 0.22,
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       CircleAvatar(
-                        radius: 35,
-                        backgroundImage:
-                        AssetImage("images/WhatsApp Image 2024-11-07 at 21.58.11.jpeg"),
+                        backgroundImage: const AssetImage(
+                            'images/WhatsApp Image 2024-11-07 at 16.22.25 (1).jpeg'),
+                        radius: size.width * 0.09,
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 20),
+                      SizedBox(width: size.width * 0.04),
+                      Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              "Avi",
-                              style: TextStyle(
+                            Padding(
+                              padding: EdgeInsets.only(top: size.width * 0.04),
+                              child: Text(
+                                'Riddhima Gupta',
+                                style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold),
-                            ),
-
-                            Text(
-                              "Busy.",
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.white54,
+                                  fontSize: size.width * 0.053,
+                                ),
                               ),
-                            )
+                            ),
+                            SizedBox(height: size.width * 0.01),
+                            Text(
+                              'Busy',
+                              style: TextStyle(
+                                color: Colors.white70,
+                                fontSize: size.width * 0.045,
+                              ),
+                            ),
                           ],
                         ),
                       ),
-                      Spacer(),
-                      Icon(
-                        Icons.qr_code,
-                        color: Color(0xFF1DA75E),
-                      ),
-                      SizedBox(
-                        width: size.width * .01,
-                      ),
-                      Icon(
-                        Icons.add_circle_outline,
-                        color: Color(0xFF1DA75E),
+                      Row(
+                        children: [
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.qr_code,
+                              color: const Color(0xff08E23D),
+                              size: size.width * 0.065,
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.add_circle_outline,
+                              color: const Color(0xff08E23D),
+                              size: size.width * 0.065,
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
                 ),
-                Divider(
-                  color: Color(0xFF636F75),
+              ),
+            ),
+            const Divider(color: Color.fromARGB(255, 31, 43, 50),),
+
+            // List of settings options
+            ListView(
+              physics: const BouncingScrollPhysics(),
+              shrinkWrap: true, // Ensures the ListView fits within the column
+              children: [
+                Listtile(
+                  context,
+                  title: "Account",
+                  subtitle: "Security notifications, change number",
+                  icon: Icons.vpn_key_outlined,
+                  index: const AccountScreen(),
                 ),
+                Listtile(
+                  context,
+                  title: "Privacy",
+                  subtitle: "Block contacts, disappearing messages",
+                  icon: Icons.lock_outline,
+                  index: const PrivacyScreen(),
+                ),
+                Listtile(
+                  context,
+                  title: "Avatar",
+                  subtitle: "Create, edit, profile photo",
+                  icon: Icons.face,
+                  index: const AvatarScreen(),
+                ),
+                Listtile(
+                  context,
+                  title: "Lists",
+                  subtitle: "Manage people and groups",
+                  icon: FontAwesomeIcons.contactBook,
+                  index:  ListScreen(),
+                ),
+                Listtile(context,
+                    title: "Notifications",
+                    subtitle: "Message, group, call tones",
+                    icon: Icons.chat_outlined,
+                    index: NotificationScreen()),
+                Listtile(context,
+                    title: 'Chats',
+                    subtitle: 'Theme, wallpapers, chat history',
+                    icon: Icons.notifications_none,
+                    index: ChatScreen()),
+                Listtile(
+                  context,
+                  title: "Storage and data",
+                  subtitle: "Network usage, auto-download",
+                  icon: Icons.data_saver_off_rounded,
+                  index: StorageandDataScreen(),
+                ),
+                Listtile(
+                  context,
+                  title: "App language",
+                  subtitle: "English (device language)",
+                  icon: FontAwesomeIcons.globe,
+                  index: StorageandDataScreen(),
+                ),
+                Listtile(
+                  context,
+                  title: "Help",
+                  subtitle: "Help center, contact us, privacy policy",
+                  icon: Icons.help_outline,
+                  index: const HelpScreen(),
+                ),
+
                 ListTile(
-                  onTap: () {Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) => AccountScreen()));},
-                  leading: Padding(
-                    padding: EdgeInsets.only(top: 6),
-                    child: Icon(
-                      Icons.vpn_key_outlined,
-                      color: Colors.white54,
+                  onTap: ()=> Get.to(InvitePage()),
+                  leading: const Icon(Icons.people, color: Colors.white54),
+                  title: Padding(
+                    padding: const EdgeInsets.only(left:8.0),
+                    child: const Text(
+                      "Invite a friend",
+                      style: TextStyle(fontSize: 17, color: Colors.white),
                     ),
                   ),
-                  title: Text(
-                    "Account",
-                    style: TextStyle(fontSize: 17, color: Colors.white),
-                  ),
-                  subtitle: Text(
-                    "Security nofications,change number",
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                  child: Text(
+                    "Also from Meta",
                     style: TextStyle(
-                      fontSize: 15,color: Colors.white54,
-                    ),
+                        color: Colors.white54,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500),
                   ),
-                ),
-                ListTile(
-                  leading: Padding(
-                    padding: EdgeInsets.only(top: 6),
-                    child: Icon(
-                      Icons.lock_outline,
-                      color: Colors.white54,
-                    ),
-                  ),
-                  title: Text(
-                    "Privacy",
-                    style: TextStyle(fontSize: 17, color: Colors.white),
-                  ),
-                  subtitle: Text(
-                    "Block contacts, disappearing messages",
-                    style: TextStyle(
-                      fontSize: 15,color: Colors.white54,
-                    ),
-                  ),
-                ),
-                ListTile(
-                  leading: Padding(
-                    padding: EdgeInsets.only(top: 6),
-                    child: Icon(
-                      FontAwesomeIcons.solidFaceSmile,
-                      color: Colors.white54,
-                    ),
-                  ),
-                  title: Text(
-                    "Avatar",
-                    style: TextStyle(fontSize: 17, color: Colors.white),
-                  ), subtitle: Text(
-                  "Create, edit,profile photo",
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.white54,
-                  ),
-                ),
                 ),
                 const ListTile(
-                  leading: Padding(
-                    padding: EdgeInsets.only(top: 6),
-                    child: Icon(
-                      color: Colors.white54,
-                      FontAwesomeIcons.contactBook,
-                    ),
-                  ),
-                  title: Text(
-                    "Lists",
-                    style: TextStyle(fontSize: 17, color: Colors.white),
-                  ),
-                  subtitle: Text(
-                    "Manage people and groups",
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.white54,
+                  leading:
+                      Icon(FontAwesomeIcons.instagram, color: Colors.white54),
+                  title: Padding(
+                    padding: EdgeInsets.only(left: 8.0),
+                    child: Text(
+                      "Open Instagram",
+                      style: TextStyle(fontSize: 17, color: Colors.white),
                     ),
                   ),
                 ),
-                ListTile(
-                  leading: Padding(
-                    padding: EdgeInsets.only(top: 6),
-                    child: Icon(
-                      Icons.chat_outlined,
-                      color: Colors.white54,
-                    ),
-                  ),
-                  title: Text(
-                    "Chats",
-                    style: TextStyle(fontSize: 17, color: Colors.white),
-                  ),
-                  subtitle: Text(
-                    "Theme,wallpapers,chat history",
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.white54,
+                const ListTile(
+                  leading:
+                      Icon(FontAwesomeIcons.facebook, color: Colors.white54),
+                  title: Padding(
+                    padding: EdgeInsets.only(left: 8.0),
+                    child: Text(
+                      "Open Facebook",
+                      style: TextStyle(fontSize: 17, color: Colors.white),
                     ),
                   ),
                 ),
-                ListTile(
-                  leading: Padding(
-                    padding: EdgeInsets.only(top: 6),
-                    child: Icon(
-                      Icons.notifications_none,
-                      color: Colors.white54,
-                    ),
-                  ),
-                  title: Text(
-                    "Notifications",
-                    style: TextStyle(fontSize: 17, color: Colors.white),
-                  ),
-                  subtitle: Text(
-                    "Message,group,call tones",
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.white54,
+                const ListTile(
+                  leading:
+                      Icon(FontAwesomeIcons.threads, color: Colors.white54),
+                  title: Padding(
+                    padding: EdgeInsets.only(left: 8.0),
+                    child: Text(
+                      "Open Threads",
+                      style: TextStyle(fontSize: 17, color: Colors.white),
                     ),
                   ),
                 ),
-                ListTile(
-                  leading: Padding(
-                    padding: EdgeInsets.only(top: 6),
-                    child: Icon(
-                      Icons.data_saver_off_rounded,
-                      color: Colors.white54,
-                    ),
-                  ),
-                  title: Text(
-                    "Storage and data",
-                    style: TextStyle(fontSize: 17, color: Colors.white),
-                  ),
-                  subtitle: Text(
-                    "Network usage, auto-download",
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.white54,
-                    ),
-                  ),
-                ),
-                ListTile(
-                  leading: Padding(
-                      padding: EdgeInsets.only(top: 6),
-                      child: Icon(
-                        FontAwesomeIcons.globe,
-                        color: Colors.white54,
-                      )),
-                  title: Text(
-                    "App language",
-                    style: TextStyle(fontSize: 17, color: Colors.white),
-                  ),
-                  subtitle: Text(
-                    "English (devices language)",
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.white54,
-                    ),
-                  ),
-                ),
-                ListTile(
-                  leading: Padding(
-                    padding: EdgeInsets.only(top: 6),
-                    child: Icon(
-                      Icons.help_outline,
-                      color: Colors.white54,
-                    ),
-                  ),
-                  title: Text(
-                    "Help",
-                    style: TextStyle(fontSize: 17, color: Colors.white),
-                  ),
-                  subtitle: Text(
-                    "Help centre, contact us,privacy policy",
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.white54,
-                    ),
-                  ),
-                ),
-                ListTile(
-                  leading: Padding(
-                    padding: EdgeInsets.only(top: 6),
-                    child: Icon(
-                      Icons.people,
-                      color: Colors.white54,
-                    ),
-                  ),
-                  title: Text(
-                    "Invite a friend",
-                    style: TextStyle(fontSize: 17, color: Colors.white),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 30, bottom: 20, left: 20),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Column(
-                      children: [
-                        Text(
-                          "Also from Meta",
-                          style: TextStyle(
-                              color: Colors.white54,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                ListTile(
-                  leading: Icon(
-                    FontAwesomeIcons.instagram,
-                    color: Colors.white54,
-                  ),
-                  title: Text(
-                    "Open Instagram",
-                    style: TextStyle(fontSize: 17, color: Colors.white),
-                  ),
-                ),
-                ListTile(
-                  leading: Icon(
-                    FontAwesomeIcons.facebook,
-                    color: Colors.white54,
-                  ),
-                  title: Text(
-                    "Open Facebook",
-                    style: TextStyle(fontSize: 17, color: Colors.white),
-                  ),
-                ),
-                ListTile(
-                  leading: Icon(
-                    FontAwesomeIcons.threads,
-                    color: Colors.white54,
-                  ),
-                  title: Text(
-                    "Open Threads",
-                    style: TextStyle(fontSize: 17, color: Colors.white),
-                  ),
-                )
               ],
             ),
-          ),
-        ));
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget Listtile(BuildContext context,
+      {required String title,
+      required String subtitle,
+      required IconData icon,
+      required Widget index}) {
+    return ListTile(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => index));
+      },
+      leading: Icon(icon, color: Colors.white54),
+
+      title: Padding(
+        padding: const EdgeInsets.only(left: 8.0),
+        child: Text(title,
+            style: const TextStyle(fontSize: 17, color: Colors.white)),
+      ),
+      subtitle: Padding(
+        padding: const EdgeInsets.only(left: 8.0),
+        child: Text(subtitle,
+            style: const TextStyle(fontSize: 15, color: Colors.white54)),
+      ),
+    );
   }
 }

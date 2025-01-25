@@ -1,6 +1,6 @@
+import 'package:app_clone/Screen/widgets/contacts.dart';
 import 'package:flutter/material.dart';
 
-import '../../feature/widgets/contacts.dart';
 
 class NewGroupPage extends StatelessWidget {
   List<String> images = [
@@ -14,11 +14,11 @@ class NewGroupPage extends StatelessWidget {
   ];
 
   List<String> names = [
-    "Avyan",
-    "Andrew",
-    "Eric",
-    "Olivia",
-    "Emma",
+    "Avi",
+    "Ansh",
+    "Divya",
+    "Mukul",
+    "Nisha",
     "Tina",
     "Vaibhav",
   ];
@@ -94,7 +94,7 @@ class NewGroupPage extends StatelessWidget {
                 "Frequently contacted",
                 style: TextStyle(
                     fontWeight: FontWeight.w500,
-                    color: Colors.white24,
+                    color: Colors.grey,
                     fontSize: 15),
               ),
             ),
@@ -105,7 +105,7 @@ class NewGroupPage extends StatelessWidget {
                 "Contacts on WhatsApp",
                 style: TextStyle(
                     fontWeight: FontWeight.w500,
-                    color: Colors.white24,
+                    color: Colors.grey,
                     fontSize: 15),
               ),
             ),

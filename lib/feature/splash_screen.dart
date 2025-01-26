@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:app_clone/nav_rail.dart';
+import 'package:app_clone/feature/nav_rail.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

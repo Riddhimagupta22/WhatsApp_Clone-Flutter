@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'Contacts Call Screen/call_link.dart';
 import 'Contacts Call Screen/call_no.dart';
 import 'Contacts Call Screen/new_contact.dart';
 
@@ -27,7 +28,7 @@ class CallList extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 10),
               child: ListTile(
-                onTap: (){},
+                onTap: ()=>Get.to(CallNo()),
                 leading: CircleAvatar(
                   radius: 21,
                   backgroundColor: Colors.green,
@@ -49,7 +50,7 @@ class CallList extends StatelessWidget {
               height: 10,
             ),
             ListTile(
-              onTap: ()=>Get.to(CallNo()),
+              onTap: ()=>Get.to(CallLink()),
               leading: CircleAvatar(
                 radius: 21,
                 backgroundColor: Colors.green,

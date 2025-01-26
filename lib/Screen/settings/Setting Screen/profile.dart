@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'Account Screen/change_no.dart';
+
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
@@ -12,7 +14,6 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-
 
     return Scaffold(
       appBar: AppBar(
@@ -48,16 +49,33 @@ class _ProfilePageState extends State<ProfilePage> {
                   height: size.width * 0.08,
                 ),
                 Center(
-                  child: CircleAvatar(
-                    radius: 70,
-                    backgroundImage: AssetImage(
-                        'images/WhatsApp Image 2024-11-07 at 16.22.25 (1).jpeg'),
-                  ),
+                  child: Stack(clipBehavior: Clip.none, children: [
+                    CircleAvatar(
+                      radius: 80,
+                      backgroundImage: AssetImage(
+                          'images/WhatsApp Image 2024-11-07 at 16.22.25 (1).jpeg'),
+                    ),
+                    Positioned(
+                      bottom: 0,
+                      right: size.width * 0.01,
+                      child: CircleAvatar(
+                        radius: size.height * 0.03,
+                        backgroundColor: Colors.green,
+                        child: const Icon(
+                          Icons.camera_alt_outlined,
+                          color: Colors.black,
+                          size: 24,
+                        ),
+                      ),
+                    ),
+                  ]),
                 ),
-                SizedBox(height: size.width * 0.08,),
+                SizedBox(
+                  height: size.width * 0.08,
+                ),
                 ListTile(
                   leading: Icon(
-                    Icons.person,
+                    Icons.perm_identity_sharp,
                     color: Colors.white54,
                   ),
                   title: Text(
@@ -82,7 +100,9 @@ class _ProfilePageState extends State<ProfilePage> {
                     'Busy',
                     style: TextStyle(color: Colors.white54),
                   ),
-                ), ListTile(
+                ),
+                ListTile(
+                  onTap: ()=>Get.to(ChangeNoPage()),
                   leading: Icon(
                     Icons.phone_rounded,
                     color: Colors.white54,

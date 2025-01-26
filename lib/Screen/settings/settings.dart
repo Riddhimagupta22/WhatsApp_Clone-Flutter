@@ -1,3 +1,4 @@
+import 'package:app_clone/Screen/settings/Setting%20Screen/App%20Lang/app_lang.dart';
 import 'package:app_clone/Screen/settings/Setting%20Screen/Avatar/avatar_screen.dart';
 import 'package:app_clone/Screen/settings/Setting%20Screen/Help%20Screen/help_screen.dart';
 import 'package:app_clone/Screen/settings/Setting%20Screen/Invite/invite.dart';
@@ -181,12 +182,25 @@ class _SettingPageState extends State<SettingPage> {
                   icon: Icons.data_saver_off_rounded,
                   index: StorageandDataScreen(),
                 ),
-                Listtile(
-                  context,
-                  title: "App language",
-                  subtitle: "English (device language)",
-                  icon: FontAwesomeIcons.globe,
-                  index: StorageandDataScreen(),
+                ListTile(
+                  onTap: () {
+                    _showBottomSheet(context);
+                  },
+                  leading: const Icon(FontAwesomeIcons.globe, color: Colors.white54),
+                  title: Padding(
+                    padding: const EdgeInsets.only(left:8.0),
+                    child: const Text(
+                      "App language",
+                      style: TextStyle(fontSize: 17, color: Colors.white),
+                    ),
+                  ),
+                  subtitle: Padding(
+                    padding: const EdgeInsets.only(left:8.0),
+                    child: const Text(
+                      "English (device language)",
+                      style: TextStyle(fontSize: 15, color: Colors.white54),
+                    ),
+                  ),
                 ),
                 Listtile(
                   context,
@@ -281,4 +295,19 @@ class _SettingPageState extends State<SettingPage> {
       ),
     );
   }
+}
+
+void _showBottomSheet(BuildContext context) {
+  var size = MediaQuery.of(context).size;
+  showModalBottomSheet(
+    backgroundColor: Color(0xff0a131a),
+    context: context,
+    builder: (context) {
+      return Container(
+        height: size.height * .999,
+        child:
+        AppLang(),
+      );
+    },
+  );
 }

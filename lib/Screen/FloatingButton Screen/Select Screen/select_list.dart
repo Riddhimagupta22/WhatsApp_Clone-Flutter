@@ -1,5 +1,9 @@
+import 'package:app_clone/Screen/chats/new_group.dart';
 import 'package:app_clone/Screen/widgets/contacts.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../Call Select/Contacts Call Screen/new_contact.dart';
 
 class Selectlist extends StatelessWidget {
   const Selectlist({super.key});
@@ -13,6 +17,7 @@ class Selectlist extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 10),
               child: ListTile(
+                onTap: ()=>Get.to(NewGroupPage()),
                 leading: CircleAvatar(
                   radius: 21,
                   backgroundColor: Colors.green,
@@ -32,6 +37,7 @@ class Selectlist extends StatelessWidget {
             ),
             SizedBox(height: 10,),
             ListTile(
+              onTap: ()=>Get.to(NewContact()),
               leading: CircleAvatar(
                 radius: 21,
                 backgroundColor: Colors.green,

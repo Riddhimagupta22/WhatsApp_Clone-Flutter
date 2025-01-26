@@ -7,6 +7,10 @@ class EmailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        shape: Border(
+            bottom: BorderSide(
+              color: Color.fromARGB(255, 31, 43, 50),
+            )),
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -53,36 +57,46 @@ class EmailScreen extends StatelessWidget {
           height: 32,
         ),
         Padding(
-            padding: const EdgeInsets.only(left: 38.0),
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Email',
-                    style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500),
-                  ),
-                ])),
-        Text(
-          'abc112@gmail.com',
-          style: TextStyle(
-              color: Colors.grey, fontSize: 16, ),
+            padding: const EdgeInsets.only(right: 275.0),
+            child: Text(
+              'Email',
+              style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w400),
+            )),
+        Padding(
+          padding: const EdgeInsets.only(top: 10.0),
+          child: Row( mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 88.0),
+                child: Text(
+                  'abc112@gmail.com',
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 16, ),
+                ),
+              ),
+              Icon(Icons.edit_outlined,color: Colors.grey)
+            ],
+          ),
         ),
         Padding(
-          padding: EdgeInsets.only(left: 38.0),
+          padding: EdgeInsets.only(left: 23.0,top: 10),
           child: Row(
             children: [
               Icon(
                 Icons.check_circle_outline_outlined,
-                color: Colors.green,
+                color: Colors.teal,
               ),
-              Text(
-                'Verified',
-                style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 16,            ),
+              Padding(
+                padding: const EdgeInsets.only(left: 5.0),
+                child: Text(
+                  'Verified',
+                  style: TextStyle(
+                      color: Colors.teal,
+                      fontSize: 16, ),
+                ),
               ),
             ],
           ),

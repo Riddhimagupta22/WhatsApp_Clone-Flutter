@@ -1,6 +1,8 @@
+import 'dart:io';
 import 'package:app_clone/Screen/settings/settings.dart';
 import 'package:app_clone/Screen/updates/status_privacy.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import '../Screen/updates/create_page.dart';
 
 class Updatepage extends StatefulWidget {
@@ -11,6 +13,19 @@ class Updatepage extends StatefulWidget {
 }
 
 class _UpdatepageState extends State<Updatepage> {
+
+  File? image;
+
+  Future chosseImage() async {
+    try {
+      await ImagePicker().pickImage(source: ImageSource.gallery);
+      if (image == null) return;
+      final imageTemporary = File(image!.path);
+      this.image = imageTemporary;
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Failed to pick image : $e'),));
+    }}
   List<String> whatsappChannelNames = [
     'New18 India',
     'ICC',
@@ -133,7 +148,11 @@ class _UpdatepageState extends State<Updatepage> {
           FloatingActionButton(
             backgroundColor: Colors.green,
             onPressed: () {
-              // Action for the camera button can be added here
+
+                setState(() {
+                  chosseImage();
+                });
+
             },
             child: Icon(Icons.camera_alt_rounded),
           ),
@@ -383,7 +402,7 @@ void _showBottomSheet(BuildContext context) {
       return Container(
         height: size.height * .999,
         child:
-            CreateChannelpage(), // Assuming CreateChannelpage is another widget
+            CreateChannelpage(),
       );
     },
   );

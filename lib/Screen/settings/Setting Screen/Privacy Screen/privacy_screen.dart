@@ -1,5 +1,11 @@
+import 'package:app_clone/Screen/settings/Setting%20Screen/Privacy%20Screen/Seen_page/seen_page.dart';
+import 'package:app_clone/Screen/settings/Setting%20Screen/Privacy%20Screen/Seen_page/timer_page.dart';
+import 'package:app_clone/Screen/updates/status_privacy.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../../widgets/custo-widget.dart';
+import 'Seen_page/about_page.dart';
+import 'Seen_page/photo_page.dart';
 
 
 
@@ -29,7 +35,6 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
             color: Colors.white,
           ),
         ),
-        backgroundColor: Color.fromARGB(255,11,17,21),
         title: Padding(
           padding: const EdgeInsets.only(top: 3),
           child: const Text(
@@ -59,7 +64,6 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
               ),
             ),
             ListTile(
-
               title: Padding(
                 padding: EdgeInsets.only(left: srcwidth * 0.018, ),
                 child: Text('Last seen and online',
@@ -76,12 +80,10 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                   ),
                 ),
               ),
-              onTap: (){
-              },
+              onTap: ()=> Get.to(SeenPage())
             ),
 
             ListTile(
-
               title: Padding(
                 padding: EdgeInsets.only(left: srcwidth * 0.018, ),
                 child: Text('Profile photo',
@@ -98,8 +100,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                   ),
                 ),
               ),
-              onTap: (){
-              },
+              onTap: ()=> Get.to(PhotoPage())
             ),
 
             ListTile(
@@ -120,8 +121,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                   ),
                 ),
               ),
-              onTap: (){
-              },
+              onTap: ()=>Get.to(AboutPage())
             ),
 
             ListTile(
@@ -134,8 +134,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                     fontSize: srcwidth * 0.042,
                   ),),
               ),
-              onTap: (){
-              },
+                onTap: ()=>Get.to(StatusPrivacypage())
             ),
 
             ListTile(
@@ -178,7 +177,6 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
             ),
 
             ListTile(
-
               title: Padding(
                 padding: EdgeInsets.only(left: srcwidth * 0.018, ),
                 child: Text('Default message timer',
@@ -196,8 +194,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                 ),
               ),
               trailing: Text('Off',style: TextStyle(color: Colors.grey,fontSize: srcwidth*0.035),),
-              onTap: (){
-              },
+              onTap: ()=> Get.to(TimerPage())
             ),
             Divider(
               thickness: 1,

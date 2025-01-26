@@ -1,5 +1,8 @@
 import 'package:app_clone/Screen/settings/settings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../Screen/FloatingButton Screen/Call Select/call_select.dart';
 
 class Calls extends StatelessWidget {
   List<String> images = [
@@ -144,7 +147,7 @@ class Calls extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.green,
-        onPressed: () {},
+        onPressed: () => Get.to(CallSelect()),
         child: Icon(Icons.add_ic_call),
       ),
       body: SingleChildScrollView(

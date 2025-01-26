@@ -1,5 +1,6 @@
 import 'package:app_clone/Screen/widgets/custo-widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
@@ -68,7 +69,21 @@ class _ChatScreenState extends State<ChatScreen> {
                 'System default',
                 style: TextStyle(color: Colors.grey),
               ),
-              onTap: () {},
+              onTap: () {
+                Get.defaultDialog(title:'Choose theme',content: Column(
+                  children: [
+                    Row(children: [
+                      Text('System default'),
+                    ],),
+                    Row(children: [
+                      Text('Light'),
+                    ],),
+                    Row(children: [
+                      Text('Dark'),
+                    ],),
+                  ],
+                ));
+              },
             ),
             ListTile(
               leading: Icon(

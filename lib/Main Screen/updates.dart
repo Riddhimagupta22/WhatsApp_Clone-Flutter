@@ -181,39 +181,105 @@ class _UpdatepageState extends State<Updatepage> {
                   ),
                 ),
                 SizedBox(
-                  height: 101,
+                  height: size.height*0.22,
                   child: ListView.builder(
+                    // shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       itemCount: statusImages.length,
-                      itemBuilder: (context, index) => Column(
-                            children: [
-                              Container(
+                      itemBuilder: (context,index)=> index ==0 ? Container(
+                        decoration: BoxDecoration(
+                            color: Color.fromRGBO(62,71,78, 1.0),
+                            borderRadius: BorderRadius.circular(20)
+                        ),
+                        margin: EdgeInsets.only(left: 15,top: 10,),
+                        height: size.height*0.6,
+                        width: size.width*0.27,
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 8,right:43 ),
+                              child: Stack(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 22,
+                                    backgroundImage: statusImages[index].image,),
+                                  Positioned(
+                                    bottom: 0,
+                                      right: -0.1,
+                                      child: CircleAvatar(
+                                        radius: 9,
+                                          backgroundColor: Colors.green,
+                                          child: Center(child: Icon(Icons.add,color: Colors.black,size: 15,))))
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 90),
+                              child: Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10,bottom: 3),
+                                    child: Text('Add status',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600,fontSize: size.width*0.03),),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ) : Container(
+                        decoration: BoxDecoration(
+                            color: Color.fromRGBO(62,71,78, 1.0),
+                            image: DecorationImage(
+                              image: AssetImage(StatusTittles[index]),
+                              fit: BoxFit.cover,),
+
+                            borderRadius: BorderRadius.circular(20)
+                        ),
+                        margin: EdgeInsets.only(left: 7,top: 10,),
+                        height: size.height*0.4,
+                        width: size.width*0.27,
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 5,right:43, ),
+                              child: Container(
                                 decoration: BoxDecoration(
-                                    border:
-                                        Border.all(color: Colors.green, width: 2),
-                                    shape: BoxShape.circle),
-                                margin: EdgeInsets.symmetric(horizontal: 7),
-                                child: CircleAvatar(
-                                  radius: 30,
-                                  backgroundImage: statusImages[index].image,
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: Colors.green,
+                                    width: 2.5,
+                                  ),),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(1.6),
+                                  child: CircleAvatar(
+                                    radius: 20,
+                                    backgroundImage: statusImages[index].image,),
                                 ),
                               ),
-                              SizedBox(height: 12),
-                              Text(
-                                StatusTittles[index],
-                                style: TextStyle(fontSize: 15, color: Colors.white),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 90),
+                              child: Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10,bottom: 3),
+                                    child: Text(StatusTittles[index],style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600,fontSize: size.width*0.03),),
+                                  ),
+                                ],
                               ),
-                            ],
-                          )),
+                            )
+
+
+                          ],
+                        ),
+                      )  ),
                 ),
-                Divider(
-                  color: Colors.white12,
-                ),
+
                 SizedBox(
                   height: 10,
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  padding: EdgeInsets.symmetric(vertical: 15,horizontal: 10),
                   child: Row(
                     children: [
                       Text(
@@ -241,7 +307,7 @@ class _UpdatepageState extends State<Updatepage> {
                     ],
                   ),
                 ),
-                SizedBox(height: 10),
+
                 ListView.builder(
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
@@ -368,7 +434,7 @@ class _UpdatepageState extends State<Updatepage> {
                   height: 15,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 10,),
                   child: Container(
                     width: 140,
                     height: 40,
@@ -383,6 +449,7 @@ class _UpdatepageState extends State<Updatepage> {
                     )),
                   ),
                 ),
+                SizedBox(height: size.height*.09,)
               ],
             ),
           ),

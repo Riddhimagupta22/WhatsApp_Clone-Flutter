@@ -1,5 +1,5 @@
 import 'package:app_clone/Main Screen/calls.dart';
-import 'package:app_clone/Main Screen/chats.dart';
+import 'package:app_clone/Main%20Screen/Chat%20Page/chats.dart';
 import 'package:app_clone/Main Screen/communties.dart';
 import 'package:app_clone/Main Screen/updates.dart';
 import 'package:flutter/material.dart';

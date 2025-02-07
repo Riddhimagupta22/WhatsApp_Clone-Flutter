@@ -8,6 +8,7 @@ double bigScreenWidth = 640.0;
 
 class Navigationrail extends StatefulWidget {
   const Navigationrail();
+  // Navigation rail
   @override
   _NavigationrailState createState() => _NavigationrailState();
 }
